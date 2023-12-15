@@ -1,0 +1,31 @@
+:root {
+	--back-color: #e6effa;
+	--white-text: #1f1f1f;
+	--item-color: #fff;
+	--item-color-active: #dadbdd;
+	--action-button-text-color: #001a34;
+	--action-button-text-color-active: #00172f;
+	--action-button-back-color: #c4e7ff;
+	--action-button-back-color-active: #abcbe0;
+	--ac-text-color: #052812;
+	--ac-text-color-active: #04210f;
+	--ac-back-color: #c3eed0;
+	--ac-back-color-active: #add1b7;
+	--shadow-color: #1f1f1f1e;
+}
+
+.switcher {
+	filter: invert(0);
+}
+
+.switcher__radio {
+	filter: invert(0);
+}
+
+.switcher__radio:checked {
+	filter: invert(1);
+}
+
+.switcher__status {
+	filter: invert(0);
+}

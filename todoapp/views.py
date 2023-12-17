@@ -4,7 +4,7 @@ from todoapp.models import TodoItem, TodoUsers
 from django.http import HttpResponse, JsonResponse
 import json
 
-mail = 'hui'
+mail = ''
 password = ''
 
 def main(request):

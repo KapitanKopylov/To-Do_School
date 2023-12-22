@@ -74,10 +74,15 @@ def add_item(request):
         # print(request.POST)
         text = str(request.POST["text"])
         # print(text)
-        if "7" in text:
-            text = text.replace("7", "семь")
-        if text:
-            text = text[0].upper() + text[1:]
+        # if "7" in text:
+        #     try:
+        #         text[text.index("7") + 1]
+        #     except IndexError:
+        #         pass
+        #     if text[text.index("7")+1] == " ":
+        #         text = text.replace("7", "семь")
+        # if text:
+        #     text = text[0].upper() + text[1:]
         if text.strip():
             try:
                 TodoItem.objects.get(item_id = text)

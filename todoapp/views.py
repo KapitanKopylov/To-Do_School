@@ -74,7 +74,6 @@ def add_item(request):
         # print(request.POST)
         text = str(request.POST["text"])
         # print(text)
-        text_arr = [i for i in text.split()]
         for numbers in text.split():
             if numbers == "7":
                 text = text.replace(numbers, "семь")

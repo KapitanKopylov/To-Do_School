@@ -3,10 +3,10 @@
 <html>
   <head>
     <title>To Do List</title>
-    <meta charset="utf-16">
+    <meta charset="utf-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatc.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rooto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/light.css'%}" media="(prefers-color-scheme: light)">
     <link rel="stylesheet" href="{% static 'css/dark.css'%}" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="{% static 'css/vk.css'%}">
@@ -17,10 +17,10 @@
     <!-- <script src="{% static 'js/auth.js' %}"></script> -->
   </head>
   <body>
-    <div class="header">
+   <div class="header">
       <h1 class="head_index">Список задач</h1>
       <fieldset class="switcher">
-        <legend class="switcher__legend">Цветовая Схема</legend>
+        <legend class="switcher__legend">Переключатель тем</legend>
         <input class="switcher__radio switcher__radio--light" type="radio" name="color-scheme" value='light' aria-label="Светлая">
         <input class="switcher__radio switcher__radio--auto" type="radio" name="color-scheme" value='auto'  aria-label="Системная" checked>
         <input class="switcher__radio switcher__radio--dark" type="radio" name="color-scheme" value='dark' aria-label="Тёмная">
@@ -30,13 +30,13 @@
     </div>
     <form class="form" method="POST" action="{% url 'add' %}" autocomplete="off">
       {% csrf_token %}
-      <label class="form__label" for = "text">Добавь задачу:</label>
-      <input class="form__input" type="text" name="text" id="text" placeholder="Мне надо сделать...">
+      <label class="form__label" for = "text">Добавь задачу</label>
+      <input class="form__input" type="text" name="text" id="text" placeholder="Мне надо сделать">
       <button class="actions" type="submit">Добавить</button>
     </form>
     <ol class="list">
       {% for item in items %}
-      {% if item.completed == False %}
+      {% if item.completed== False %}
       <div class="False">
         <li class="list__item">
           <button class="turn_On" id = "{{ item.item_id }}" name = "turn_On"></button>
@@ -47,12 +47,12 @@
       {% endif %}
       {% endfor %}
       {% for item in items %}
-      {% if item.completed == True %}
+      {% if item.completed== True %}
       <div class="True">
         <li class="list__item">
-          <button class="turn_Off" id = "{{ item.item_id }}" name = "turn_Off"></button>
-          <label class="list__item__text__True" for = "{{ item.item_id }}">{{ item.text }}</label>
-          <button class="ac" id = "{{ item.item_id }}" name = "delete">Удалить</button>
+            <button class="turn_Off" id = "{{ item.item_id }}" name = "turn_Off"></button>
+            <label class="list__item__text__True" for = "{{ item.item_id }}">{{ item.text }}</label>
+            <button class="ac" id = "{{ item.item_id }}" name = "delete">Удалить</button>
         </li>
       </div>
       {% endif %}

@@ -36,7 +36,7 @@
     </form>
     <ol class="list">
       {% for item in items %}
-      {% if item.completed== False %}
+      {% if item.completed == False %}
       <div class="False">
         <li class="list__item">
           <button class="turn_On" id = "{{ item.item_id }}" name = "turn_On"></button>
@@ -47,7 +47,7 @@
       {% endif %}
       {% endfor %}
       {% for item in items %}
-      {% if item.completed== True %}
+      {% if item.completed == True %}
       <div class="True">
         <li class="list__item">
             <button class="turn_Off" id = "{{ item.item_id }}" name = "turn_Off"></button>

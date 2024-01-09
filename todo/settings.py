@@ -25,12 +25,14 @@ SECRET_KEY = 'django-insecure-1ca^yl9v7h#e%7dn=pt$+wnld^rq*s=_2y8+u!^o^l8$=v5c__
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "192.168.63.160"]
 for i in range(10):
     ALLOWED_HOSTS.append(f"192.168.0.10{i}")
 
 
 # Application definition
+
+# DEFAULT_CHARSET = 'utf-8'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -80,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-        'PASSWORD': 'alohomora2359',
+        # 'NAME': '/Users/kapitankopylov/Python/To-Do-master/todo/db.sqlite3',
     }
 }
 

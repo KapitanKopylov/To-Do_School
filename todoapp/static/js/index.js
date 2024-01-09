@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function(){
     buttons.forEach(function(button) {
         button.addEventListener("click", function () {
             if (button.name === 'turn_Off' || button.name === 'turn_On' || button.name === "delete") {
-                console.log('/' + button.name + '/' + button.id + '/');
-                fetch('/' + button.name + '/' + button.id + '/')
+                console.log('/' + button.name + '/' + button.id);
+                fetch('/' + button.name + '/' + button.id);
                 setTimeout(function(){
                     window.location.href = "/index/";
                 }, 100);

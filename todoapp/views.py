@@ -64,7 +64,10 @@ def index(request):
     # else:
     #     return HttpResponse(json.dumps({"error": "Invalid request"}), content_type="application/json", status = 400)
     items = TodoItem.objects.all()
+    # print(items[len(items)-1].text)
+    # print("hello")
     return render(request, 'index.html', {'items': items})
+    # return 'hell'
 
 def add_item(request):
     global mail
@@ -132,3 +135,6 @@ def turn_Off(request, item):
         item_to_switch.save()
         print(f'Ошибочка, не выполнено "{item_to_switch.item_id}"')
     return HttpResponse(content_type="application/json", status = 200)
+
+# item = TodoItem(item_id = "Hello", text = "Hello", mail = mail)
+# item.save()

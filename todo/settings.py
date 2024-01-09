@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-1ca^yl9v7h#e%7dn=pt$+wnld^rq*s=_2y8+u!^o^l8$=v5c__
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ["127.0.0.1", "192.168.63.160"]
+ALLOWED_HOSTS = ["127.0.0.1",
+                 "192.168.63.160",
+                 "TheBestToDoListEver.pythonanywhere.com",
+                 "www.TheBestToDoListEver.pythonanywhere.com"]
 for i in range(10):
     ALLOWED_HOSTS.append(f"192.168.0.10{i}")
 

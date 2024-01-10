@@ -126,8 +126,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, "TheBestToDoListEver/To-Do_School/todoapp/static")
+
 STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, "todoapp/static"),
+    os.path.join(BASE_DIR, "todoapp/static"),
+    "home/TheBestToDoListEver/To-Do_School/todoapp/static",
 ]
 
 # Default primary key field type

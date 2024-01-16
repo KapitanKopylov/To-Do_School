@@ -40,7 +40,6 @@ body {
   padding: 1vw;
   padding-left: 2vw;
   margin-bottom: 1.5vh;
-  border: none;
   border: 0.25vw solid var(--action-button-text-color);
   border-radius: 10vw;
   font-size: 4vw;
@@ -147,7 +146,7 @@ body {
   vertical-align: middle;
   cursor: pointer;
   border-radius: 1.5em;
-  border: none;
+  /*border: none;*/
   border: 0.25vw solid var(--ac-back-color);
   color: var(--ac-text-color);
   background-color: var(--ac-back-color);
@@ -287,13 +286,13 @@ body {
   margin: 0;
   padding: 0;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 30vw;
-  height: 10vw;
+  width: 15vw;
+  height: 5vw;
   background-color: #dfdfdf;
   /*background-color: #00ff00;*/
-  border: 0.5vw solid #202020;
-  border-radius: 6vw;
-  margin-left: 0;
+  border: 0.25vw solid #202020;
+  border-radius: 3vw;
+  /*margin-left: 0;*/
   margin-right: 3vw;
 }
 
@@ -308,14 +307,14 @@ body {
   appearance: none;
   /*align-self: center;*/
   position: relative;
-  width: 6.25vw;
-  height: 6.25vw;
+  width: 3.125vw;
+  height: 3.125vw;
   cursor: pointer;
   /*width: 125px;
   height: 125px;*/
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 6.25vw;
+  background-size: 3.125vw;
   transition: filter 0.1s ease-in;
 }
 
@@ -329,9 +328,9 @@ body {
   z-index: -1;
   display: inline-block;
   border: none;
-  border-radius: 6vw;
+  border-radius: 3vw;
   background-repeat: no-repeat;
-  background-size: 8.75vw;
+  background-size: 4.375vw;
   background-position: center;
   background-image: url('../img/chose.svg');
   transition: background-position 0.1s cubic-bezier(0.65, 0.05, 0.36, 1)
@@ -347,7 +346,7 @@ body {
   justify-self: left;
   align-self: center;
   margin: 0;
-  margin-left: 1.875vw;
+  margin-left: 0.9vw;
 }
 
 .switcher__radio--auto {
@@ -362,15 +361,15 @@ body {
   justify-self: right;
   align-self: center;
   margin: 0;
-  margin-right: 1.875vw;
+  margin-right: 0.9vw;
 }
 
 .switcher__radio:focus-visible ~ .switcher__status {
-  box-shadow: 0 0 0.9375vw 0.46875vw #202020;
+  box-shadow: 0 0 0.45vw 0.32vw #202020;
 }
 
 .switcher__radio--light:checked ~ .switcher__status {
-  background-position: left 0.625vw center;
+  background-position: left 0.3125vw center;
 }
 
 .switcher__radio--auto:checked ~ .switcher__status {
@@ -378,7 +377,7 @@ body {
 }
 
 .switcher__radio--dark:checked ~ .switcher__status {
-  background-position: right 0.625vw center;
+  background-position: right 0.3125vw center;
 }
 
 .legging{

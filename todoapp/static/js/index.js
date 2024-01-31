@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 fetch('/' + button.name + '/' + button.id);
                 setTimeout(function(){
                     window.location.href = "/index/";
-                }, 100);
+                }, 300);
             } else if (button.name === "account_button") {
                 console.log("Goodbye");
                 localStorage.removeItem('mail');

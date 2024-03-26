@@ -42,6 +42,8 @@ document.addEventListener('DOMContentLoaded', function(){
 	        		var password = document.getElementById('password').value;
 	        		localStorage.setItem('mail', mail);
 	        		localStorage.setItem('password', password);
+					document.cookie = "mail=" + mail;
+					document.cookie = "password=" + password;
 					if (mail && password) {
 						var data = {
 							mail: mail, 
@@ -119,3 +121,4 @@ document.addEventListener('DOMContentLoaded', function(){
   		}
 	});
 });
+

@@ -286,13 +286,16 @@ body {
   margin: 0;
   padding: 0;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 15vw;
-  height: 5vw;
+  /*width: 15vw;*/
+  width: 200px;
+  /*height: 5vw;*/
+  height: 66px;
   background-color: #dfdfdf;
   /*background-color: #00ff00;*/
-  border: 0.25vw solid #202020;
-  border-radius: 3vw;
-  /*margin-left: 0;*/
+  /*border: 0.25vw solid #202020;*/
+  border: 3px solid #202020;
+  /*border-radius: 3vw;*/
+  border-radius: 35px;
   margin-right: 3vw;
 }
 
@@ -307,14 +310,17 @@ body {
   appearance: none;
   /*align-self: center;*/
   position: relative;
-  width: 3.125vw;
-  height: 3.125vw;
+  /*width: 3.125vw;*/
+  width: 40px;
+  /*height: 3.125vw;*/
+  height: 40px;
   cursor: pointer;
   /*width: 125px;
   height: 125px;*/
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 3.125vw;
+  /*background-size: 3.125vw;*/
+  background-size: 40px;
   transition: filter 0.1s ease-in;
 }
 
@@ -328,9 +334,13 @@ body {
   z-index: -1;
   display: inline-block;
   border: none;
-  border-radius: 3vw;
+  /*border-radius: 3vw;*/
+  border-radius: 33px;
   background-repeat: no-repeat;
-  background-size: 4.375vw;
+  /*background-size: 4.375vw;*/
+  width: 200px;
+  height: 66px;
+  background-size: 57px;
   background-position: center;
   background-image: url('../img/chose.svg');
   transition: background-position 0.1s cubic-bezier(0.65, 0.05, 0.36, 1)
@@ -346,7 +356,8 @@ body {
   justify-self: left;
   align-self: center;
   margin: 0;
-  margin-left: 0.9vw;
+  /*margin-left: 0.9vw;*/
+  margin-left: 12px;
 }
 
 .switcher__radio--auto {
@@ -361,15 +372,16 @@ body {
   justify-self: right;
   align-self: center;
   margin: 0;
-  margin-right: 0.9vw;
+  /*margin-right: 0.9vw;*/
+  margin-right: 12px;
 }
 
 .switcher__radio:focus-visible ~ .switcher__status {
-  box-shadow: 0 0 0.45vw 0.32vw #202020;
+  box-shadow: 0 0 5px 5px #202020;
 }
 
 .switcher__radio--light:checked ~ .switcher__status {
-  background-position: left 0.3125vw center;
+  background-position: left 3px center;
 }
 
 .switcher__radio--auto:checked ~ .switcher__status {
@@ -377,7 +389,7 @@ body {
 }
 
 .switcher__radio--dark:checked ~ .switcher__status {
-  background-position: right 0.3125vw center;
+  background-position: right 3px center;
 }
 
 .legging{

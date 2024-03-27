@@ -1,4 +1,3 @@
-import re
 from django.shortcuts import render, redirect
 from todoapp.models import TodoItem, TodoUsers
 from django.http import HttpResponse, JsonResponse
@@ -7,20 +6,22 @@ import json
 mail = ''
 password = ''
 
-def main(request):
-    pass
+
+# def main(request):
+#     pass
 
 def account(request):
     return render(request, 'account.html')
 
+
 def authentification(request):
-    global mail
     if request.method == "POST":
         try:
             data = json.loads(request.body.decode('utf-8'))
-            mail = data.get('mail')
-            password = data.get('password')
-            print("success")
+            # mail = data.get('mail')
+            # password = data.get('password')
+            print(f"mail: {request.COOKIES.get('mail')}")
+            print(f"password: {request.COOKIES.get('password')}")
             # return redirect('index')
             return JsonResponse({'message': "success"}, content_type="application/json", status=200)
         except json.JSONDecodeError:
@@ -41,6 +42,7 @@ def add_user(request):
     #         User.save()
         
     return redirect('index')
+
 
 def index(request):
     # print('index')
@@ -69,8 +71,10 @@ def index(request):
     return render(request, 'index.html', {'items': items})
     # return 'hell'
 
+
 def add_item(request):
     global mail
+    mail = request.COOKIES.get('mail')
     # user = request.user
     # if user == mail:
     if request.method == 'POST':
@@ -92,27 +96,30 @@ def add_item(request):
             else:
                 for i in range(len(TodoItem.objects.all())):
                     try:
-                        TodoItem.objects.get(item_id = text + str(i))
+                        TodoItem.objects.get(item_id=text + str(i))
                     except TodoItem.DoesNotExist:
-                        item = TodoItem(item_id = text + str(i), text = text)
+                        item = TodoItem(item_id=text + str(i), text=text, mail=mail)
                         item.save()
-                        print(f"Добавлено: {request.POST['text']}") 
+                        print(f"Добавлено: {request.POST['text']}, в аккаунт: {mail}")
+                        # print(f"Добавлено: {request.POST['text']}")
                         break
 
     return redirect('index')
 
+
 def delete(request, item):
     try:
-        TodoItem.objects.get(item_id = item)
+        TodoItem.objects.get(item_id=item)
     except TodoItem.DoesNotExist:
         print("Item DoesN't Exist")
     else:
-        item_to_delete = TodoItem.objects.get(item_id = item)
-        print(f"Удалено: {item_to_delete.item_id}")
+        item_to_delete = TodoItem.objects.get(item_id=item)
         item_to_delete.delete()
-    return HttpResponse(content_type="application/json", status = 200)
+        print(f"Удалено: {item_to_delete.item_id}")
+    return HttpResponse(status=200)
 
-def turn_On(request, item):
+
+def turn_on(request, item):
     try:
         TodoItem.objects.get(item_id = item)
     except TodoItem.DoesNotExist:
@@ -126,15 +133,15 @@ def turn_On(request, item):
 
 def turn_Off(request, item):
     try:
-        TodoItem.objects.get(item_id = item)
+        TodoItem.objects.get(item_id=item)
     except TodoItem.DoesNotExist:
         print("Item DoesN't Exist")
     else:
-        item_to_switch = TodoItem.objects.get(item_id = item)
+        item_to_switch = TodoItem.objects.get(item_id=item)
         item_to_switch.completed = False
         item_to_switch.save()
         print(f'Ошибочка, не выполнено "{item_to_switch.item_id}"')
-    return HttpResponse(content_type="application/json", status = 200)
+    return HttpResponse(content_type="application/json", status=200)
 
 # item = TodoItem(item_id = "Hello", text = "Hello", mail = mail)
 # item.save()

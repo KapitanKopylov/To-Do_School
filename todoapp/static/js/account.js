@@ -3,10 +3,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		var mail = localStorage.getItem('mail');
 		var password = localStorage.getItem('password');
+		document.cookie = "mail=" + localStorage.getItem('mail');
+		console.log("create mail");
+		document.cookie = "password=" + localStorage.getItem('password');
+		console.log("create password");
 		if (mail && password) {
 			var data = {
 				mail: mail, 
-				password: password 
+				password: password,
 			};
 			csrftoken = document.querySelector('input[name=csrfmiddlewaretoken]').value;
 			data.csrfmiddlewaretoken = csrftoken;
@@ -43,7 +47,9 @@ document.addEventListener('DOMContentLoaded', function(){
 	        		localStorage.setItem('mail', mail);
 	        		localStorage.setItem('password', password);
 					document.cookie = "mail=" + mail;
+					console.log("create mail");
 					document.cookie = "password=" + password;
+					console.log("create password");
 					if (mail && password) {
 						var data = {
 							mail: mail, 

@@ -16,7 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -27,11 +26,13 @@ SECRET_KEY = 'django-insecure-1ca^yl9v7h#e%7dn=pt$+wnld^rq*s=_2y8+u!^o^l8$=v5c__
 DEBUG = True
 ALLOWED_HOSTS = ["127.0.0.1",
                  "192.168.63.160",
+                 "192.168.34.160",
+                 "192.168.153.160",
+                 "192.168.139.160",
                  "TheBestToDoListEver.pythonanywhere.com",
                  "www.TheBestToDoListEver.pythonanywhere.com"]
-for i in range(10):
-    ALLOWED_HOSTS.append(f"192.168.0.10{i}")
-
+for i in range(256):
+    ALLOWED_HOSTS.append(f"192.168.0.{i}")
 
 # Application definition
 
@@ -75,7 +76,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'todo.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -86,7 +86,6 @@ DATABASES = {
         # 'NAME': '/Users/kapitankopylov/Python/To-Do-master/todo/db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -106,7 +105,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -117,7 +115,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

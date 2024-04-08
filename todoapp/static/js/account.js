@@ -26,18 +26,6 @@ document.addEventListener('DOMContentLoaded', function(){
 				success: function(response){
 					console.log("Welcome");
 					window.location.href = '/index/';
-				},
-				error: function(xhr, status) {
-					console.error("jkvnnvjfn")
-					if (xhr.status == 401) {
-						console.log('jellfnjkndknv')
-						// Ваш код для выполнения при неправильном пароле или почте
-						localStorage.removeItem('mail');
-						localStorage.removeItem('password');
-						window.location.href = '/';
-						document.querySelector('[tabindex="1"]').focus;
-						console.error("Wrong password or mail");
-					}
 				}
 			});
 		} else {

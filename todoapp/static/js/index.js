@@ -29,4 +29,24 @@ document.addEventListener('DOMContentLoaded', function(){
         localStorage.removeItem('password');
         window.location.href = '/';
     }
+
+    document.getElementById("delete_account").addEventListener('click', function() {
+        document.getElementById('notification').style.display = 'block';
+    });
+
+    document.getElementById("no").addEventListener('click', function() {
+        document.getElementById('notification').style.display = 'none';
+    });
+
+    document.getElementById('dick').addEventListener('click', function() {
+        // document.getElementById('notification').style.display = 'none';
+        console.log('goodbye forever');
+        fetch('/delete_account/');
+        localStorage.removeItem('mail');
+        localStorage.removeItem('password');
+        setTimeout(function(){
+            window.location.href = "/";
+        }, 250);
+    });
 });
+

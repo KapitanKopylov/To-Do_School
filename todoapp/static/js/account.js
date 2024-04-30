@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function(){
 				success: function(response){
 					console.log("Welcome");
 					window.location.href = '/index/';
+
 				}
 			});
 		} else {

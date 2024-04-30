@@ -125,6 +125,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "TheBestToDoListEver/To-Do_School/todoapp/s
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "todoapp/static"),
+    "Users/kapitankopylov/App files/Python/To-Do-master/todoapp/static",
     "home/TheBestToDoListEver/To-Do_School/todoapp/static",
 ]
 

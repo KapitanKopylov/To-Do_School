@@ -14,7 +14,6 @@ def account(request):
 def authentification(request):
     if request.method == "POST":
         try:
-            # data = json.loads(request.body.decode('utf-8'))
             mail = request.COOKIES.get('mail')
             password = request.COOKIES.get('password')
             print(f"mail: {mail}")
@@ -70,7 +69,6 @@ def add_item(request):
                 for i in TodoItem.objects.all():
                     if i.mail == mail:
                         items.append(i)
-
                 for i in range(len(items)):
                     try:
                         TodoItem.objects.get(item_id=text + str(i), mail=mail)
@@ -121,4 +119,21 @@ def turn_off(request, item):
         item_to_switch.completed = False
         item_to_switch.save()
         print(f'Ошибочка, не выполнено "{item_to_switch.item_id}"')
+    return HttpResponse(content_type="application/json", status=200)
+
+
+def delete_account(request):
+    """delete account and all of its items"""
+    mail = request.COOKIES.get('mail')
+    print(mail)
+    items = TodoItem.objects.all()
+    for item in items:
+        if item.mail == mail:
+            item.delete()
+    print("Все задачи удалены")
+    accounts = TodoUsers.objects.all()
+    for account in accounts:
+        if account.mail == mail:
+            account.delete()
+    print("Аккаунт удалён")
     return HttpResponse(content_type="application/json", status=200)

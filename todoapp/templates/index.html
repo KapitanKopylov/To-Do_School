@@ -14,7 +14,6 @@
     <link rel="favicon" type = "image/ico" href="{% static 'img/favicon.ico'%}">
     <link rel="apple-touch-icon-precomposed" href="{% static 'img/apple-touch-icon-precomposed.png'%}">
     <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png'%}">
-    <!-- <script src="{% static 'js/auth.js' %}"></script> -->
   </head>
   <body>
    <div class="header">
@@ -58,6 +57,17 @@
       {% endif %}
       {% endfor %}
     </ol>
+
+   <button class="delete_account" id = 'delete_account' name = 'delete_account'>Удалить<br>Аккаунт</button>
+
+   <div id = 'notification' class = 'notification'>
+       <div class = "popup-content">
+           <p>Вы уверены, что хотите удалить аккаунт? Отменить это действие будет навозможно</p>
+           <button id = 'no'>Нет</button>
+           <button id = 'dick'>Да</button>
+       </div>
+   </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'js/index.js' %}"></script>
     <script src="{% static 'js/colorscheme.js' %}"></script>

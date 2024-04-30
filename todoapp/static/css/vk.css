@@ -396,3 +396,51 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+.delete_account {
+  padding: 0.5em 0.625em;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+  font-size: 4vw;
+  font-weight: 500;
+  float: right;
+  cursor: pointer;
+  border: 0.5vh solid var(--red-color);
+  border-radius: 10vw;
+  outline: none;
+  color: var(--red-text-color);
+  background-color: var(--red-color);
+  transition: background-color, color, border-radius, 0.3s, 0.3s;
+}
+
+.delete_account:hover,
+.delete_account:active,
+.delete_account:focus {
+  border-radius: 0.5em;
+  color: var(--red-text-color-active);
+  background-color: var(--action-button-text-color-active);
+}
+
+.delete_account:focus-visible{
+  border: 0.5vh solid var(--action-button-text-color-active);
+}
+
+.notification {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 20% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}

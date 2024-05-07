@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
     if (localStorage.getItem('mail')) {
-        var mail = localStorage.getItem('mail');
-        var password = localStorage.getItem('password');
         var buttons = document.querySelectorAll(".ac, .turn_On, .turn_Off, .account_button");
 
         buttons.forEach(function(button) {
@@ -41,10 +39,11 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('dick').addEventListener('click', function() {
         // document.getElementById('notification').style.display = 'none';
         console.log('goodbye forever');
-        fetch('/delete_account/');
+        // fetch('delete_account/');
         localStorage.removeItem('mail');
         localStorage.removeItem('password');
-        fetch('/delete_account/');
+        // fetch('delete_account/');
+        window.location.href = '/delete_account/';
         setTimeout(function(){
             window.location.href = "/";
         }, 1000);

@@ -398,16 +398,16 @@ body {
 }
 
 .delete_account {
-  padding: 0.5em 0.625em;
+  padding: 0.1em 0.625em;
   margin: 0;
   text-decoration: none;
   text-align: center;
-  font-size: 4vw;
+  font-size: 3vw;
   font-weight: 500;
   float: right;
   cursor: pointer;
   border: 0.5vh solid var(--red-color);
-  border-radius: 10vw;
+  border-radius: 20vw;
   outline: none;
   color: var(--red-text-color);
   background-color: var(--red-color);
@@ -429,6 +429,7 @@ body {
 
 .notification {
   display: none;
+  font-size: 20px;
   position: fixed;
   top: 0;
   left: 0;
@@ -438,10 +439,60 @@ body {
 }
 
 .popup-content {
-  background-color: #fefefe;
+  background-color: var(--item-color);
+  color: var(--white-text);
   margin: 20% auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid var(--item-color);
   width: 80%;
-  max-width: 600px;
+  max-width: 450px;
+  border-radius: 15px;
+}
+
+.no {
+  background-color: var(--red-color);
+  border: 2px solid var(--red-color);
+  color: var(--red-text-color);
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 10px;
+  transition: background-color, color, border-radius, 0.3s, 0.3s;
+}
+
+.no:hover,
+.no:active,
+.no:focus {
+  border: 2px solid var(--red-color-active);
+  background-color: var(--red-color-active);
+  color: var(--red-text-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.yes {
+  background-color: var(--ac-back-color);
+  border: 2px solid var(--ac-back-color);
+  color: var(--ac-text-color);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 25px;
+  transition: background-color, color, border-radius, 0.3s, 0.3s;
+}
+
+.yes:hover,
+.yes:active,
+.yes:focus {
+  border: 2px solid var(--ac-back-color-active);
+  background-color: var(--ac-back-color-active);
+  color: var(--ac-text-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
 }

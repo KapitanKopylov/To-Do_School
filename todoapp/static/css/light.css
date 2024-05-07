@@ -1,5 +1,6 @@
 :root {
-	--back-color: #e6effa;
+	/*--back-color: #D3C1DF;*/
+	--back-color: #e5effa;
 	--white-text: #1f1f1f;
 	--item-color: #fff;
 	--item-color-active: #dadbdd;
@@ -9,7 +10,7 @@
 	--action-button-back-color-active: #abcbe0;
 	--red-color: #FF5449;
 	--red-color-active: #FF7162;
-	--red-text-color:#670218;
+	--red-text-color:#39010D;
 	--red-text-color-active: #910020;
 	--ac-text-color: #052812;
 	--ac-text-color-active: #04210f;

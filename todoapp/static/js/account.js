@@ -26,7 +26,12 @@ document.addEventListener('DOMContentLoaded', function(){
 				success: function(response){
 					console.log("Welcome");
 					window.location.href = '/index/';
-
+				},
+				error: function() {
+					localStorage.removeItem('mail');
+					localStorage.removeItem('password');
+					window.location.href = '/';
+					document.querySelector('[tabindex="1"]').focus;
 				}
 			});
 		} else {
@@ -67,9 +72,16 @@ document.addEventListener('DOMContentLoaded', function(){
 								xhr.setRequestHeader("X-CSRFToken", csrftoken);
 							},
 							contentType: "application/json; charset=utf-8",
-							success: function(response){
+							success: function(response) {
 								console.log("Welcome");
 								window.location.href = '/index/';
+							},
+							error: function() {
+								console.log("Error");
+								document.getElementById('notification').style.display = 'block';
+								document.getElementById('notification').addEventListener('click', function() {
+									document.getElementById('notification').style.display = 'none';
+								});
 							}
 						});
 					} else {

@@ -29,6 +29,7 @@ ALLOWED_HOSTS = ["127.0.0.1",
                  "192.168.34.160",
                  "192.168.153.160",
                  "192.168.139.160",
+                 '192.168.254.160',
                  "TheBestToDoListEver.pythonanywhere.com",
                  "www.TheBestToDoListEver.pythonanywhere.com"]
 for i in range(256):

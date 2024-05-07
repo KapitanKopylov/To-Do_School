@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function(){
         fetch('/delete_account/');
         setTimeout(function(){
             window.location.href = "/";
-        }, 250);
+        }, 1000);
     });
 });
 

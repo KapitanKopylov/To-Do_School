@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function(){
         fetch('/delete_account/');
         localStorage.removeItem('mail');
         localStorage.removeItem('password');
+        fetch('/delete_account/');
         setTimeout(function(){
             window.location.href = "/";
         }, 250);

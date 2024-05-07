@@ -419,11 +419,12 @@ body {
 .delete_account:focus {
   border-radius: 0.5em;
   color: var(--red-text-color-active);
-  background-color: var(--action-button-text-color-active);
+  border: 0.5vh solid var(--red-color-active);
+  background-color: var(--red-color-active);
 }
 
 .delete_account:focus-visible{
-  border: 0.5vh solid var(--action-button-text-color-active);
+  border: 0.5vh solid var(--red-color-active);
 }
 
 .notification {

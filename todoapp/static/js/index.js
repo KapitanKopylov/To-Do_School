@@ -37,13 +37,10 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 
     document.getElementById('dick').addEventListener('click', function() {
-        // document.getElementById('notification').style.display = 'none';
         console.log('goodbye forever');
-        // fetch('delete_account/');
-        window.location.href = '/delete_account/';
+        fetch('delete_account/');
         localStorage.removeItem('mail');
         localStorage.removeItem('password');
-        // fetch('delete_account/');
         setTimeout(function(){
             window.location.href = "/";
         }, 1000);

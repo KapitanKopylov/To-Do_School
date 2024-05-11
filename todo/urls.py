@@ -9,5 +9,5 @@ urlpatterns = [
     path('turn_Off/<item>/', turn_off, name='turn_Off'),
     path('index/', index, name='index'),
     path('authentification/', authentification, name='authentification'),
-    path('delete_account/', delete_account, name='delete_account'),
+    path('index/delete_account/', delete_account, name='delete_account'),
 ]
